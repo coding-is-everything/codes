@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Hover Effects</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #f7f7f7;
+                font-family: sans-serif;
+            }
+
+            .image-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .image {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .image img {
+                width: 100%;
+                height: auto;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .overlay h3,
+            .overlay p {
+                margin: 0;
+            }
+
+            .image:hover .overlay {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="image-container">
+            <div class="image">
+                <img src="https://cdn.pixabay.com/photo/2023/04/03/11/45/water-7896610_1280.jpg" alt="Image">
+                <div class="overlay">
+                    <h3>Image Title</h3>
+                    <p>AP Tech</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
