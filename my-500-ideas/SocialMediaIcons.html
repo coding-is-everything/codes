@@ -3,7 +3,7 @@
     <head>
         <title>Social Media Icons</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-yOusGM1w0AKK8GbrOhMeNv1yYPcl9ryt2Q+45myYvFyoH9n5A5pEKb5W5uevzjKxQ2nFiOWwJnpmpKjA66+tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
             body {
                 margin: 0;
@@ -14,6 +14,29 @@
             .social-icons {
                 display: flex;
                 justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            .social-icons a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                height: 50px;
+                width: 50px;
+                margin-right: 10px;
+                text-decoration: none;
+            }
+
+            .social-icons a:hover {
+                background-color: #666;
+            }
+
+            .social-icons i {
+                font-size: 24px;
             }
     </head>
     <body>
