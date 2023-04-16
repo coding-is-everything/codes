@@ -1,1 +1,101 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <title>Responsive Navigation Menu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+
+            header {
+                background-color: #2196f3;
+                color: #fff;
+                padding: 20px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .menu {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+
+            .menu li {
+                margin-right: 20px;
+            }
+
+            .menu li:last-child {
+                margin-right: 0;
+            }
+
+            .menu li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .menu-toggle {
+                display: none;
+                cursor: pointer;
+                color: #fff;
+                font-size: 24px;
+            }
+
+            @media(max-width: 768px) {
+                .menu {
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: #fff;
+                    width: 100%;
+                    padding: 20px;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                    transition: all 0.3s ease-in-out;
+                    transform: translateY(-100%);
+                }
+
+                .menu li {
+                    margin: 10px 0;
+                }
+
+                .menu-toggle {
+                    display: block;
+                }
+            }
+
+            .menu-toggle i {
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+        <main>
+        </main>
+        <footer>
+        </footer>
+        <script src="https://kit.fontawesome.com/631c80f69c.js" crossorigin="anonymous"></script>
+    </body>
+</html>
