@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social Media Icons</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons .icon {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons .icon:hover {
+      color: #007bff;
+    }
+
+    @media (max-width: 768px) {
+      .social-icons {
+        justify-content: center;
+      }
+
+      .social-icons .icon {
+        margin: 0 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="social-icons">
+    <a class="icon" href="#"><i class="fab fa-facebook-f"></i></a>
+    <a class="icon" href="#"><i class="fab fa-twitter"></i></a>
+    <a class="icon" href="#"><i class="fab fa-instagram"></i></a>
+    <a class="icon" href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+
+  <!-- Make sure to include the Font Awesome library -->
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>

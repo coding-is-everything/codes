@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Navigation Menu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar .menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .menu-item {
+      margin-right: 15px;
+    }
+
+    .navbar .menu-item:last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+
+      .navbar .menu {
+        margin-top: 10px;
+      }
+
+      .navbar .menu-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Logo</div>
+    <div class="menu">
+      <a class="menu-item" href="#">Home</a>
+      <a class="menu-item" href="#">About</a>
+      <a class="menu-item" href="#">Services</a>
+      <a class="menu-item" href="#">Contact</a>
+    </div>
+  </nav>
+</body>
+</html>
