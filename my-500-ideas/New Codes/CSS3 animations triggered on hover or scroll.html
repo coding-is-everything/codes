@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS3 Animations</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .animation-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .animation-item {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      line-height: 200px;
+      font-size: 24px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .animation-item:hover {
+      transform: scale(1.1);
+    }
+
+    .animation-item.fade-in {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .animation-item.fade-in.visible {
+      opacity: 1;
+    }
+
+    @keyframes slide-in {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .animation-item.slide-in {
+      animation: slide-in 0.5s ease;
+    }
+
+    @media (max-width: 768px) {
+      .animation-item {
+        width: 150px;
+        height: 150px;
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="animation-item fade-in">Fade In</div>
+    <div class="animation-item slide-in">Slide In</div>
+    <!-- Add more animation items here -->
+  </div>
+
+  <script>
+    // Fade In Animation Triggered on Scroll
+    var fadeItems = document.querySelectorAll('.fade-in');
+
+    function fadeInOnScroll() {
+      fadeItems.forEach(function(item) {
+        var itemTop = item.getBoundingClientRect().top;
+        var itemBottom = item.getBoundingClientRect().bottom;
+
+        if (itemTop < window.innerHeight && itemBottom > 0) {
+          item.classList.add('visible');
+        } else {
+          item.classList.remove('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', fadeInOnScroll);
+  </script>
+</body>
+</html>
