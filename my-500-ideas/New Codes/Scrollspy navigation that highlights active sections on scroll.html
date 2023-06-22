@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrollspy Navigation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      z-index: 9999;
+      padding: 10px;
+    }
+
+    .navbar .menu {
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar .menu-item {
+      margin-right: 15px;
+    }
+
+    .navbar .menu-item:last-child {
+      margin-right: 0;
+    }
+
+    .section {
+      padding: 50px;
+      background-color: #fff;
+      color: #333;
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+    }
+
+    .active-section {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 20px;
+      }
+
+      .navbar .menu-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="menu">
+      <a class="menu-item" href="#section1">Section 1</a>
+      <a class="menu-item" href="#section2">Section 2</a>
+      <a class="menu-item" href="#section3">Section 3</a>
+      <a class="menu-item" href="#section4">Section 4</a>
+    </div>
+  </nav>
+
+  <div id="section1" class="section">
+    <h2>Section 1</h2>
+    <p>This is the content of section 1.</p>
+  </div>
+
+  <div id="section2" class="section">
+    <h2>Section 2</h2>
+    <p>This is the content of section 2.</p>
+  </div>
+
+  <div id="section3" class="section">
+    <h2>Section 3</h2>
+    <p>This is the content of section 3.</p>
+  </div>
+
+  <div id="section4" class="section">
+    <h2>Section 4</h2>
+    <p>This is the content of section 4.</p>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function() {
+      var sections = document.querySelectorAll(".section");
+      var navbar = document.querySelector(".navbar");
+      var menuItems = document.querySelectorAll(".menu-item");
+
+      var currentSection = "";
+
+      sections.forEach(function(section) {
+        var sectionTop = section.offsetTop;
+        var sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - sectionHeight / 2) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      menuItems.forEach(function(item) {
+        item.classList.remove("active-section");
+        if (item.getAttribute("href").slice(1) === currentSection) {
+          item.classList.add("active-section");
+        }
+      });
+
+      if (pageYOffset >= 50) {
+        navbar.classList.add("active-section");
+      } else {
+        navbar.classList.remove("active-section");
+      }
+    });
+  </script>
+</body>
+</html>
